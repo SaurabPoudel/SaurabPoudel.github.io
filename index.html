@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saurab Poudel | Systems Engineer &amp; Electronics Hacker</title>
+  <meta name="description" content="Portfolio of Saurab Poudel — Electronics &amp; Communication Engineering student, systems builder, and aspiring FAANG engineer. Explore projects in low-latency systems, signal processing, and cloud infrastructure." />
+  <meta name="keywords" content="Saurab Poudel, portfolio, systems engineer, electronics, signal processing, Rust, C++, Python, AWS" />
+  <meta name="author" content="Saurab Poudel" />
+  <meta property="og:title" content="Saurab Poudel | Systems Engineer Portfolio" />
+  <meta property="og:description" content="Hacker-themed portfolio showcasing projects in distributed systems, signal processing, and cloud infrastructure." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ============ BOOT LOADER SCREEN ============ -->
+  <div id="boot-loader">
+    <div class="boot-content">
+      <div class="boot-logo">
+        <span class="boot-bracket">[</span>
+        <span class="boot-name">SP</span>
+        <span class="boot-bracket">]</span>
+      </div>
+      <div class="boot-lines" id="boot-lines"></div>
+      <div class="boot-progress-container">
+        <div class="boot-progress-bar" id="boot-progress-bar"></div>
+      </div>
+      <div class="boot-status" id="boot-status">INITIALIZING SYSTEM...</div>
+    </div>
+  </div>
+
+  <!-- ============ SCANLINE OVERLAY ============ -->
+  <div class="scanlines"></div>
+
+  <!-- ============ MATRIX RAIN CANVAS ============ -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav id="main-nav" class="nav-hidden">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="nav-bracket">[</span>SP<span class="nav-bracket">]</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" data-section="hero">&gt; HOME</a></li>
+        <li><a href="#terminal" data-section="terminal">&gt; TERMINAL</a></li>
+        <li><a href="#projects" data-section="projects">&gt; PROJECTS</a></li>
+        <li><a href="#skills" data-section="skills">&gt; SKILLS</a></li>
+        <li><a href="#about" data-section="about">&gt; ABOUT</a></li>
+        <li><a href="#contact" data-section="contact">&gt; CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section id="hero" class="section">
+    <div class="hero-content">
+      <div class="hero-glitch-container">
+        <p class="hero-prefix">&gt; system.identify()</p>
+        <h1 class="hero-title glitch-text" data-text="Saurab Poudel">Saurab Poudel</h1>
+        <div class="hero-typing-container">
+          <span class="hero-prompt">&gt;&nbsp;</span>
+          <span class="hero-subtitle" id="hero-subtitle"></span>
+          <span class="typing-cursor">█</span>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <a href="#terminal" class="btn btn-primary" id="btn-terminal">
+          <span class="btn-icon">⌨</span> Access Terminal
+        </a>
+        <a href="#projects" class="btn btn-secondary" id="btn-projects">
+          <span class="btn-icon">◈</span> View Projects
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-label">STATUS</span>
+          <span class="stat-value blink-slow">ONLINE</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">UPTIME</span>
+          <span class="stat-value" id="uptime-counter">00:00:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">LOCATION</span>
+          <span class="stat-value">NEPAL</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL DOWN</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============ TERMINAL SECTION ============ -->
+  <section id="terminal" class="section">
+    <div class="section-header">
+      <h2 class="section-title glitch-text" data-text="// INTERACTIVE TERMINAL">// INTERACTIVE TERMINAL</h2>
+      <p class="section-subtitle">&gt; Type a command and press Enter. Try: <span class="highlight">help</span></p>
+    </div>
+    <div class="terminal-window" id="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-title">saurab@portfolio:~</span>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output">
+          <div class="terminal-line">
+            <span class="terminal-system">System:</span> Terminal v2.0 initialized.
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-system">System:</span> Type <span class="highlight">'help'</span> for available commands.
+          </div>
+          <div class="terminal-line terminal-divider">═══════════════════════════════════════════</div>
+        </div>
+        <div class="terminal-input-line">
+          <span class="terminal-prompt">saurab@portfolio:~$&nbsp;</span>
+          <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS SECTION ============ -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <h2 class="section-title glitch-text" data-text="// CLASSIFIED PROJECTS">// CLASSIFIED PROJECTS</h2>
+      <p class="section-subtitle">&gt; ACCESS LEVEL: AUTHORIZED &nbsp;|&nbsp; CLEARANCE: TOP SECRET</p>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <section id="skills" class="section">
+    <div class="section-header">
+      <h2 class="section-title glitch-text" data-text="// SYSTEM SCAN">// SYSTEM SCAN</h2>
+      <p class="section-subtitle">&gt; Running capability analysis... <span class="highlight blink-slow">COMPLETE</span></p>
+    </div>
+    <div class="skills-container">
+      <div class="skills-radar" id="skills-radar">
+        <canvas id="radar-canvas" width="400" height="400"></canvas>
+      </div>
+      <div class="skills-list" id="skills-list">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section id="about" class="section">
+    <div class="section-header">
+      <h2 class="section-title glitch-text" data-text="// SYSTEM PROFILE">// SYSTEM PROFILE</h2>
+      <p class="section-subtitle">&gt; Decrypting personnel file...</p>
+    </div>
+    <div class="about-container">
+      <div class="about-card">
+        <div class="about-header-line">
+          <span class="about-tag">CLASSIFICATION:</span>
+          <span class="about-value highlight">UNRESTRICTED</span>
+        </div>
+        <div class="about-divider">─────────────────────────────────────</div>
+        <div class="about-field">
+          <span class="about-key">DESIGNATION:</span>
+          <span class="about-val">Saurab Poudel</span>
+        </div>
+        <div class="about-field">
+          <span class="about-key">ROLE:</span>
+          <span class="about-val">Electronics &amp; Communication Engineer</span>
+        </div>
+        <div class="about-field">
+          <span class="about-key">SPECIALIZATION:</span>
+          <span class="about-val">Signal Processing | VLSI Design | Distributed Systems</span>
+        </div>
+        <div class="about-field">
+          <span class="about-key">OBJECTIVE:</span>
+          <span class="about-val">Building low-latency, high-performance systems</span>
+        </div>
+        <div class="about-divider">─────────────────────────────────────</div>
+        <div class="about-bio">
+          <p>&gt; I'm an Electronics &amp; Communication Engineering student with a deep fascination for how systems work at every level — from transistor gates to distributed cloud architectures.</p>
+          <p>&gt; My focus areas include <span class="highlight">VLSI design</span>, <span class="highlight">signal processing</span>, <span class="highlight">low-latency systems</span>, and <span class="highlight">computer networking</span>.</p>
+          <p>&gt; Currently preparing for <span class="highlight">GATE</span> examinations while building production-grade systems-level projects.</p>
+          <p>&gt; I believe in understanding systems from first principles — not just using tools, but knowing WHY they work.</p>
+        </div>
+        <div class="about-divider">─────────────────────────────────────</div>
+        <div class="about-interests">
+          <span class="about-key">ACTIVE INTERESTS:</span>
+          <div class="interest-tags">
+            <span class="interest-tag">Distributed Systems</span>
+            <span class="interest-tag">Low-Latency Engineering</span>
+            <span class="interest-tag">Computer Networking</span>
+            <span class="interest-tag">OS Internals</span>
+            <span class="interest-tag">Signal Processing</span>
+            <span class="interest-tag">VLSI Design</span>
+            <span class="interest-tag">Cloud Infrastructure</span>
+            <span class="interest-tag">Embedded Systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <h2 class="section-title glitch-text" data-text="// SECURE TRANSMISSION">// SECURE TRANSMISSION</h2>
+      <p class="section-subtitle">&gt; Establishing encrypted channel... <span class="highlight blink-slow">CONNECTED</span></p>
+    </div>
+    <div class="contact-container">
+      <div class="contact-links">
+        <a href="mailto:poudelsaurab20@gmail.com" class="contact-item" id="contact-email">
+          <span class="contact-icon">✉</span>
+          <span class="contact-label">EMAIL</span>
+          <span class="contact-value">poudelsaurab20@gmail.com</span>
+        </a>
+        <a href="https://github.com/SaurabPoudel" target="_blank" rel="noopener" class="contact-item" id="contact-github">
+          <span class="contact-icon">⌥</span>
+          <span class="contact-label">GITHUB</span>
+          <span class="contact-value">github.com/SaurabPoudel</span>
+        </a>
+        <a href="https://www.linkedin.com/in/saurab-poudel/" target="_blank" rel="noopener" class="contact-item" id="contact-linkedin">
+          <span class="contact-icon">◉</span>
+          <span class="contact-label">LINKEDIN</span>
+          <span class="contact-value">linkedin.com/in/saurab-poudel</span>
+        </a>
+        <a href="https://x.com/SaurabPoudel07" target="_blank" rel="noopener" class="contact-item" id="contact-twitter">
+          <span class="contact-icon">✕</span>
+          <span class="contact-label">X / TWITTER</span>
+          <span class="contact-value">x.com/SaurabPoudel07</span>
+        </a>
+      </div>
+      <div class="contact-form-container">
+        <h3 class="form-title">&gt; SEND ENCRYPTED MESSAGE</h3>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="form-name" class="form-label">&gt; SENDER_ID:</label>
+            <input type="text" id="form-name" class="form-input" placeholder="Enter your name..." required />
+          </div>
+          <div class="form-group">
+            <label for="form-email" class="form-label">&gt; RETURN_ADDR:</label>
+            <input type="email" id="form-email" class="form-input" placeholder="Enter your email..." required />
+          </div>
+          <div class="form-group">
+            <label for="form-message" class="form-label">&gt; PAYLOAD:</label>
+            <textarea id="form-message" class="form-input form-textarea" placeholder="Enter your message..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">
+            <span class="btn-icon">⚡</span> TRANSMIT MESSAGE
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer">
+    <div class="footer-content">
+      <p class="footer-text">&gt; Designed &amp; Built by <span class="highlight">Saurab Poudel</span> &nbsp;|&nbsp; © <span id="footer-year"></span></p>
+      <p class="footer-subtext">// All systems nominal. Connection secure.</p>
+    </div>
+  </footer>
+
+  <!-- ============ AUDIO ELEMENTS (for sound effects) ============ -->
+  <audio id="sfx-keypress" preload="auto"></audio>
+  <audio id="sfx-boot" preload="auto"></audio>
+  <audio id="sfx-glitch" preload="auto"></audio>
+
+  <script src="js/matrix.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
