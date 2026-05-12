@@ -5,11 +5,11 @@
 /* ─── Typing Effect ─── */
 const TypingEffect = (() => {
   const phrases = [
-    'Electronics Engineer | VLSI Design | Systems Builder',
-    'Signal Processing | Low-Latency Systems',
+    'Computer Systems Engineer | Systems Builder',
+    'OS Internals | Low-Latency Systems',
     'From Transistors to Cloud Architecture',
     'GATE Aspirant | Building Systems from First Principles',
-    'VLSI Design | Distributed Computing | Networking',
+    'Computer Architecture | Distributed Computing | Networking',
   ];
 
   let phraseIndex = 0;
@@ -61,10 +61,11 @@ const RadarChart = (() => {
 
   const skills = [
     { label: 'C++', value: 92 },
+    { label: 'Go', value: 90 },
     { label: 'Rust', value: 85 },
     { label: 'Network', value: 88 },
     { label: 'OS', value: 82 },
-    { label: 'Signal', value: 78 },
+    { label: 'Arch', value: 78 },
     { label: 'Python', value: 80 },
     { label: 'Cloud', value: 75 },
     { label: 'Systems', value: 83 },

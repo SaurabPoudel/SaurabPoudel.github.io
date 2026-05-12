@@ -665,7 +665,7 @@ a:hover {
 .terminal-body {
   padding: 1.2rem;
   min-height: 350px;
-  max-height: 450px;
+  max-height: 550px;
   display: flex;
   flex-direction: column;
 }
@@ -1459,4 +1459,161 @@ a:hover {
     width: 100%;
     justify-content: center;
   }
+
+  .whoami-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .whoami-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   WHOAMI PROFILE CARD
+   ════════════════════════════════════════════ */
+.whoami-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  background: linear-gradient(135deg, rgba(0, 255, 65, 0.04), rgba(0, 229, 255, 0.03));
+  border: 1px solid var(--clr-border-glow);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  animation: whoamiSlideIn 0.5s ease forwards;
+}
+
+.whoami-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clr-green), var(--clr-cyan), var(--clr-magenta), var(--clr-green));
+  background-size: 200% 100%;
+  animation: whoamiGradient 3s linear infinite;
+}
+
+@keyframes whoamiGradient {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+@keyframes whoamiSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.whoami-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--clr-green);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3), 0 0 30px rgba(0, 255, 65, 0.1);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.whoami-avatar::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--clr-cyan);
+  animation: avatarSpin 3s linear infinite;
+}
+
+@keyframes avatarSpin {
+  to { transform: rotate(360deg); }
+}
+
+.whoami-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: saturate(0.8) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.whoami-card:hover .whoami-avatar img {
+  filter: saturate(1) brightness(1);
+}
+
+.whoami-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.whoami-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-green);
+  text-shadow: var(--glow-text);
+  letter-spacing: 2px;
+}
+
+.whoami-role {
+  font-size: 0.78rem;
+  color: var(--clr-cyan);
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+.whoami-divider {
+  color: var(--clr-text-muted);
+  font-size: 0.7rem;
+  margin: 0.15rem 0;
+  opacity: 0.5;
+}
+
+.whoami-bio {
+  font-size: 0.78rem;
+  color: var(--clr-text);
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.whoami-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.whoami-tag {
+  font-size: 0.68rem;
+  padding: 0.2rem 0.6rem;
+  background: rgba(0, 255, 65, 0.08);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  border-radius: 3px;
+  color: var(--clr-green-dim);
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.whoami-tag:hover {
+  background: rgba(0, 255, 65, 0.15);
+  border-color: var(--clr-green);
+  color: var(--clr-green);
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.2);
 }

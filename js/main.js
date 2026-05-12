@@ -412,6 +412,7 @@ const skillsData = [
     color: 'fill-green',
     items: [
       { name: 'C / C++', level: 92 },
+      { name: 'Go', level: 90 },
       { name: 'Rust', level: 85 },
       { name: 'Python', level: 80 },
       { name: 'SQL', level: 75 },
@@ -426,8 +427,8 @@ const skillsData = [
       { name: 'Computer Networking', level: 88 },
       { name: 'Distributed Systems', level: 83 },
       { name: 'Operating Systems', level: 82 },
-      { name: 'Signal Processing', level: 78 },
-      { name: 'Digital Electronics', level: 85 },
+      { name: 'Computer Architecture', level: 85 },
+      { name: 'Systems Programming', level: 82 },
     ],
   },
   {

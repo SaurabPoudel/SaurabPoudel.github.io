@@ -47,14 +47,14 @@ const Terminal = (() => {
           { type: 'system', text: '╚══════════════════════════════════════════╝' },
           { type: 'default', text: '' },
           { type: 'success', text: '  Name:       Saurab Poudel' },
-          { type: 'default', text: '  Role:       Electronics & Communication Engineer' },
-          { type: 'default', text: '  Focus:      VLSI Design | Signal Processing | Systems' },
+          { type: 'default', text: '  Role:       Computer Systems Engineer' },
+          { type: 'default', text: '  Focus:      OS Internals | Computer Architecture | Systems' },
           { type: 'default', text: '  Location:   Nepal' },
           { type: 'default', text: '' },
           { type: 'default', text: '  I build systems from first principles — from' },
-          { type: 'default', text: '  transistor gates to cloud architectures.' },
+          { type: 'default', text: '  OS kernels to cloud architectures.' },
           { type: 'default', text: '' },
-          { type: 'default', text: '  Passionate about VLSI design, low-latency' },
+          { type: 'default', text: '  Passionate about computer architecture, low-latency' },
           { type: 'default', text: '  engineering, and distributed systems.' },
           { type: 'default', text: '' },
           { type: 'default', text: '  Currently: Preparing for GATE exam + building' },
@@ -106,6 +106,7 @@ const Terminal = (() => {
           { type: 'divider' },
           { type: 'success', text: '  ◈ PROGRAMMING' },
           { type: 'default', text: '    C++  ████████████████████░  92%' },
+          { type: 'default', text: '    Go   ███████████████████░░  90%' },
           { type: 'default', text: '    Rust ██████████████████░░░  85%' },
           { type: 'default', text: '    Py   █████████████████░░░░  80%' },
           { type: 'default', text: '    SQL  ████████████████░░░░░  75%' },
@@ -113,7 +114,7 @@ const Terminal = (() => {
           { type: 'success', text: '  ◈ DOMAINS' },
           { type: 'default', text: '    Networking     ██████████████████░░  88%' },
           { type: 'default', text: '    OS Internals   █████████████████░░░  82%' },
-          { type: 'default', text: '    Signal Proc.   ████████████████░░░░  78%' },
+          { type: 'default', text: '    Comp. Arch.    ████████████████░░░░  78%' },
           { type: 'default', text: '    Dist. Systems  █████████████████░░░  83%' },
           { type: 'default', text: '' },
           { type: 'success', text: '  ◈ TOOLS' },
@@ -149,17 +150,17 @@ const Terminal = (() => {
           { type: 'system', text: '>>> Decrypting academic records...' },
           { type: 'divider' },
           { type: 'success', text: '  ◈ DEGREE' },
-          { type: 'default', text: '    B.E. in Electronics & Communication Engineering' },
+          { type: 'default', text: '    B.E. in Computer Engineering' },
           { type: 'default', text: '    Status: IN PROGRESS' },
           { type: 'default', text: '' },
           { type: 'success', text: '  ◈ PREPARATIONS' },
           { type: 'default', text: '    GATE Examination — Active preparation' },
-          { type: 'default', text: '    Focus: ECE + CS core subjects' },
+          { type: 'default', text: '    Focus: CS core subjects' },
           { type: 'default', text: '' },
           { type: 'success', text: '  ◈ CORE SUBJECTS' },
-          { type: 'default', text: '    Signal & Systems | Digital Electronics' },
-          { type: 'default', text: '    Computer Networks | Microprocessors' },
-          { type: 'default', text: '    Electromagnetic Theory | VLSI Design' },
+          { type: 'default', text: '    Operating Systems | Computer Architecture' },
+          { type: 'default', text: '    Computer Networks | Data Structures & Algorithms' },
+          { type: 'default', text: '    Database Systems | Compiler Design' },
           { type: 'default', text: '    Control Systems | Analog & Digital Circuits' },
         ];
       }
@@ -177,7 +178,7 @@ const Terminal = (() => {
           { type: 'success', text: '  ► Low-latency server architectures' },
           { type: 'success', text: '  ► Network protocol implementations' },
           { type: 'success', text: '  ► Cloud infrastructure automation' },
-          { type: 'success', text: '  ► Signal processing pipelines' },
+          { type: 'success', text: '  ► Systems programming & OS internals' },
           { type: 'default', text: '' },
           { type: 'system', text: '  Open to internship & full-time opportunities.' },
         ];
@@ -191,11 +192,11 @@ const Terminal = (() => {
           { type: 'system', text: '>>> Mission Objectives:' },
           { type: 'divider' },
           { type: 'success', text: '  [ACTIVE]  Crack GATE with top percentile' },
-          { type: 'success', text: '  [ACTIVE]  Master VLSI design & chip architecture' },
+          { type: 'success', text: '  [ACTIVE]  Master computer architecture & OS design' },
           { type: 'success', text: '  [ACTIVE]  Build production-grade systems portfolio' },
           { type: 'default', text: '  [QUEUED]  Contribute to major open-source projects' },
-          { type: 'default', text: '  [QUEUED]  Research in signal processing & VLSI' },
-          { type: 'default', text: '  [QUEUED]  Work on chip design at a leading firm' },
+          { type: 'default', text: '  [QUEUED]  Research in distributed systems & databases' },
+          { type: 'default', text: '  [QUEUED]  Work on systems infrastructure at a leading firm' },
         ];
       }
     },
@@ -204,7 +205,29 @@ const Terminal = (() => {
       description: 'Quick identity',
       execute() {
         return [
-          { type: 'success', text: 'saurab_poudel — Electronics Engineer | Systems Builder' },
+          { type: 'system', text: '╔══════════════════════════════════════════╗' },
+          { type: 'system', text: '║            OPERATOR IDENTITY             ║' },
+          { type: 'system', text: '╚══════════════════════════════════════════╝' },
+          { type: 'html', text: `
+            <div class="whoami-card">
+              <div class="whoami-avatar">
+                <img src="me.png" alt="Saurab Poudel" />
+              </div>
+              <div class="whoami-info">
+                <span class="whoami-name">Saurab Poudel</span>
+                <span class="whoami-role">Computer Systems Engineer</span>
+                <div class="whoami-divider">─────────────────────────</div>
+                <p class="whoami-bio">I am an Electronics and Communication Engineering student at Pulchowk Campus with strong interests in systems engineering, Rust, networking, and low-level programming.</p>
+                <div class="whoami-tags">
+                  <span class="whoami-tag">Systems</span>
+                  <span class="whoami-tag">Rust</span>
+                  <span class="whoami-tag">Go</span>
+                  <span class="whoami-tag">Networking</span>
+                  <span class="whoami-tag">Low-Level</span>
+                </div>
+              </div>
+            </div>
+          ` },
         ];
       }
     },
@@ -330,6 +353,8 @@ const Terminal = (() => {
       line.textContent = '═══════════════════════════════════════════';
     } else if (type === 'command') {
       line.innerHTML = `<span class="terminal-prompt">saurab@portfolio:~$ </span>${escapeHTML(text)}`;
+    } else if (type === 'html') {
+      line.innerHTML = text;
     } else {
       const spanClass = type === 'system' ? 'terminal-system'
         : type === 'success' ? 'terminal-success'
